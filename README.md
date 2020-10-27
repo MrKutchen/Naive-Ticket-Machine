@@ -13,12 +13,12 @@ There is 35 pages of reading and exercises in the chapter.
 Work through all these exercises. You edit this file with your answers for these exercises.
 
 ### Exercise 2.1
-* Create a TicketMachine object on the object bench.
-* Upon viewing its methods, `getBalance`, `getPrice`, `insertMoney`, `printTicket`.
-* Use `getPrice` method to view the value of the price of the tickets that was set when this object was created.
-* Use `insertMoney` method to simulate inserting an amount of money into the machine.
-* Use `getBalance` to check that the machine has a record of the amount inserted.
-	* You can insert several separate amounts of money into the machine, just like you might insert multiple coins or notes into a real machine. Try inserting the exact amount required for a ticket. As this is a simple machine, a ticket will not be issued automatically, so once you have inserted enough money, call the `printTicket` method. A facsimile ticket should be printed in the BlueJ terminal window.
+* Create a TicketMachine object on the object bench.(done)
+* Upon viewing its methods, `getBalance`, `getPrice`, `insertMoney`, `printTicket`. (done)
+* Use `getPrice` method to view the value of the price of the tickets that was set when this object was created. (done)
+* Use `insertMoney` method to simulate inserting an amount of money into the machine. (done)
+* Use `getBalance` to check that the machine has a record of the amount inserted. (done)
+* You can insert several separate amounts of money into the machine, just like you might insert multiple coins or notes into a real machine. Try inserting the exact amount required for a ticket. As this is a simple machine, a ticket will not be issued automatically, so once you have inserted enough money, call the `printTicket` method. A facsimile ticket should be printed in the BlueJ terminal window. (done)
 
 ### Exercise 2.2
 * What value is returned if you check the machine’s balance after it has printed a ticket?
