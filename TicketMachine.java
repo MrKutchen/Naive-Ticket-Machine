@@ -24,13 +24,61 @@ public class TicketMachine
      * Note that the price must be greater than zero, and there
      * are no checks to ensure this.
      */
-    public TicketMachine(int ticketCost)
+    public TicketMachine()
     {
-        price = ticketCost;
+        price = 1000;
         balance = 0;
         total = 0;
     }
 
+    public TicketMachine(int ticketPrice)
+    {
+        price = ticketPrice;
+        balance = 0;
+        total = 0;
+    }
+    
+    public void prompt()
+    {
+        System.out.println("Please insert the correct amount of money.");
+    }
+    
+    public void showPrice()
+    {
+        System.out.println("The price of a ticket is " + price + " cents.");
+    }
+    
+    public int getTotal()
+    {
+     return total;   
+    }
+    
+    public void setPrice(int newPrice)
+    {
+        price = newPrice;
+    }
+    
+    public void discount(int amount)
+    {
+        price -= amount;
+    }
+    
+    public void empty()
+    {
+        total = 0;
+    }
+    
+    public void insertMoney(int amount)
+    {
+        if(amount > 0) {
+            balance = balance + amount;
+        }   
+        else {
+            System.out.println("Use a positive amount: " +
+            amount);
+        }
+    }
+    
     /**
      * Return the price of a ticket.
      */
@@ -47,15 +95,7 @@ public class TicketMachine
     {
         return balance;
     }
-
-    /**
-     * Receive an amount of money in cents from a customer.
-     */
-    public void insertMoney(int amount)
-    {
-        balance = balance + amount;
-    }
-
+    
     /**
      * Print a ticket.
      * Update the total collected and
@@ -63,16 +103,22 @@ public class TicketMachine
      */
     public void printTicket()
     {
-        // Simulate the printing of a ticket.
-        System.out.println("##################");
-        System.out.println("# The BlueJ Line");
-        System.out.println("# Ticket");
-        System.out.println("# " + price + " cents.");
-        System.out.println("##################");
-        System.out.println();
-        // Update the total collected with the balance.
-        total = total + balance;
-        // Clear the balance.
-        balance = 0;
+        if(balance >= price) {
+            // Simulate the printing of a ticket.
+            System.out.println("##################");
+            System.out.println("# The BlueJ Line");
+            System.out.println("# Ticket");
+            System.out.println("# " + price + " cents.");
+            System.out.println("##################");
+            System.out.println();
+            // Update the total collected with the price.
+            total = total + price;
+            // Reduce the balance by the price.
+            balance = balance - price;
+        }
+        else {
+            System.out.println("You must insert at least: " +
+            (price - balance) + " cents.");
+        }   
     }
 }
